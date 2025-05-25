@@ -1,0 +1,17 @@
+workflows:
+  ios-simulator-build:
+    name: Deductly - All-In-One SwiftUI App
+    max_build_duration: 60
+    environment:
+      xcode: latest
+    scripts:
+      - name: Build for iOS Simulator
+        script: |
+          xcodebuild build \
+            -scheme DeductlyApp \
+            -project DeductlyApp.xcodeproj \
+            -destination 'platform=iOS Simulator,name=iPhone 14' \
+            -sdk iphonesimulator \
+            -configuration Debug
+    artifacts:
+      - build/Build/Products/Debug-iphonesimulator/*.app
