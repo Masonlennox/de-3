@@ -1,6 +1,5 @@
 import SwiftUI
 
-// MARK: - Entry Point
 @main
 struct DeductlyApp: App {
     var body: some Scene {
@@ -10,7 +9,6 @@ struct DeductlyApp: App {
     }
 }
 
-// MARK: - Home View
 struct ContentView: View {
     @StateObject private var viewModel = DeductlyViewModel()
 
@@ -65,7 +63,6 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Chat View
 struct ChatView: View {
     @ObservedObject var viewModel: DeductlyViewModel
     @State private var message: String = ""
@@ -109,7 +106,6 @@ struct ChatView: View {
     }
 }
 
-// MARK: - ViewModel & Models
 class DeductlyViewModel: ObservableObject {
     struct Deduction: Identifiable {
         let id = UUID()
@@ -128,7 +124,6 @@ class DeductlyViewModel: ObservableObject {
     @Published var messages: [Message] = []
 
     func startScan() {
-        // Simulated receipt scan result
         let mock = Deduction(category: "Office Supplies", amount: 42.99, date: Date())
         deductions.append(mock)
     }
