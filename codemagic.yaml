@@ -1,6 +1,6 @@
 workflows:
   ios-simulator-build:
-    name: Deductly - All-In-One SwiftUI App
+    name: Deductly - One File SwiftUI Build
     max_build_duration: 60
     environment:
       xcode: latest
